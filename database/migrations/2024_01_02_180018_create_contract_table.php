@@ -23,6 +23,7 @@ return new class extends Migration
             $table->date('End_date');
             $table->bigInteger('Contract_Period');
             $table->double('Year_Increment', 8, 2);
+            $table->double('office_Size', 5, 2);
             $table->double('MieteProM2', 8, 2);
             $table->double('Kalt_Miete', 8, 2);
             $table->double('Reinigung_Kosten', 8, 2);
