@@ -43,6 +43,7 @@
                             <th style="width: 7.5%; white-space: nowrap;" class="text-center"><strong>Start Date</strong></th>
                             <th style="width: 7.5%; white-space: nowrap;" class="text-center"><strong>End Date</strong></th>
                             <th style="width: 5%; white-space: nowrap;" class="text-center"><strong>Contract Period <br>(monate)</strong></th>
+                            <th style="width: 5%; white-space: nowrap;" class="text-center"><strong>Size<br>(sq. m)</strong></th>
                             <th style="width: 7.5%; white-space: nowrap;" class="text-center"><strong>Year Increment<br>(€)</strong></th>
                             <th style="width: 7.5%; white-space: nowrap;" class="text-center"><strong>Miete Pro m2<br>(sq. m)</strong></th>
                             <th style="width: 7.5%; white-space: nowrap;" class="text-center"><strong>Kalt Miete<br>(Size * Miete Pro m2)<br>(€)</strong></th>
@@ -72,6 +73,7 @@
                                 <td style="width: 5%; white-space: nowrap;" class="text-center">{{ $values->End_date }}</td>
                                 <td style="width: 5%; white-space: nowrap;" class="text-center">{{ $values->Contract_Period }}</td>
                                 <td style="width: 5%; white-space: nowrap;" class="text-center">{{ $values->Year_Increment }}</td>
+                                <td style="width: 5%; white-space: nowrap;" class="text-center">{{ $values->officeSize }}</td>
                                 <td style="width: 5%; white-space: nowrap;" class="text-center">{{ $values->MieteProM2 }}</td>
                                 <td style="width: 5%; white-space: nowrap;" class="text-center">{{ $values->Kalt_Miete }}</td>
                                 <td style="width: 5%; white-space: nowrap;" class="text-center">{{ $values->Reinigung_Kosten }}</td>
