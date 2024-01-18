@@ -16,6 +16,7 @@ class contract extends Model
         'Start_date',
         'End_date',
         'Contract_Period',
+        'office_Size',
         'Year_Increment',
         'MieteProM2',
         'Kalt_Miete',
