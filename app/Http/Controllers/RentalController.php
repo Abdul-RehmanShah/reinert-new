@@ -79,7 +79,11 @@ class RentalController extends Controller
         // Fetch 'steuer_Prozent' from the 'customer' table
         $steuerProzent = customer::find($data['customer_id'])->steuer_Prozent;
 
+        //Removing Extra land size from total size
+        $officeSize = $officeSize - $data['Extra_Land_size'];
+
          // Calculate 'Kalt_Miete' based on 'MieteProM2' and 'size'
+
         $kaltMiete = $data['MieteProM2'] * $officeSize;
 
          // Calculate 'Net_Extra_Land_Mieten' based on 'Extra_Land_size' and 'Extra_Land_Miete_ProM2'
@@ -97,8 +101,11 @@ class RentalController extends Controller
         // Calculate 'Warm_Miete_ohne_Nebenkosten' based on the sum of 'Net_Kalt_Miete' and 'Steuer'
         $warmMieteOhneNebenkosten = $netKaltMiete + $steuer;
 
+        //Adding back Extra land size to total size
+        $officeSize = $officeSize + $data['Extra_Land_size'];
+
         // Calculate Nebankosten
-        $Nebenkosten = $data['Nebenkosten']*($data['Extra_Land_size']+$officeSize);
+        $Nebenkosten = $data['Nebenkosten']*$officeSize;
 
         // Calculate 'Nebenkosten_mit_Steuer' based on 'Nebenkosten' and 'steuer_Prozent'
         $nebenkostenMitSteuer = $Nebenkosten * $steuerProzent / 100 + $Nebenkosten;
@@ -109,7 +116,6 @@ class RentalController extends Controller
         }
         // Calculate 'Warm_Miete' based on the sum of 'Warm_Miete_ohne_Nebenkosten' and 'Nebenkosten_mit_Steuer'
         $warmMiete = $warmMieteOhneNebenkosten + $nebenkostenMitSteuer;
-
 
         // Create a new instance of the Contract model
         $newContract = new Contract;
@@ -126,6 +132,7 @@ class RentalController extends Controller
         $newContract->End_date = date('Y-m-d', strtotime($data['End_date']));
         $newContract->Contract_Period = $data['Contract_Period'];
         $newContract->Year_Increment = $data['Year_Increment'];
+        $newContract->office_Size =  $officeSize;
         $newContract->MieteProM2 = $data['MieteProM2'];
         $newContract->Kalt_Miete = $kaltMiete;
         $newContract->Reinigung_Kosten = $data['Reinigung_Kosten'];
