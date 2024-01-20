@@ -16,7 +16,7 @@ return new class extends Migration
             $table->unsignedBigInteger('office_id');
             $table->foreign('office_id');
             $table->unsignedBigInteger('customer_id');
-            $table->foreign('customer_id');
+            $table->integer('customer_id');
             $table->string('Vollname', 120);
             $table->string('Office_Name', 120);
             $table->date('Start_date');
