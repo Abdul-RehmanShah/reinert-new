@@ -14,9 +14,9 @@ return new class extends Migration
         Schema::create('contract', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('office_id');
-            $table->foreign('office_id')->references('id')->on('office')->onDelete('cascade');
+            $table->foreign('office_id');
             $table->unsignedBigInteger('customer_id');
-            $table->foreign('customer_id')->references('id')->on('customer')->onDelete('cascade');
+            $table->foreign('customer_id');
             $table->string('Vollname', 120);
             $table->string('Office_Name', 120);
             $table->date('Start_date');
