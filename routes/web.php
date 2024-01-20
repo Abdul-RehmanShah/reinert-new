@@ -52,5 +52,6 @@ Route::middleware(['web', 'auth'])->group(function () {
     Route::get('/office', [OfficeController::class, 'index'])->name('office');
     Route::get('/createoffice', [OfficeController::class, 'createView'])->name('createoffice');
     Route::post('/addoffice', [OfficeController::class, 'stoor'])->name('stoor');
+    Route::get('logout', [LoginController::class, 'logout'])->name('logout');
 });
 
