@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('office', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('Floor_id');
-            $table->foreign('Floor_id');
+            $table->integer('Floor_id');
             $table->string('Name', 120);
             $table->double('size', 5, 2);
             $table->integer('NoOfRooms');
