@@ -187,7 +187,7 @@
                   aria-labelledby="navbarDropdown"
                 >
                   <div class="dropdown-divider"></div>
-                  <a class="dropdown-item" href="/login"
+                  <a class="dropdown-item" href="/logout"
                     ><i class="fa fa-power-off me-1 ms-1"></i> Logout</a
                   >
                   
